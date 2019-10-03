@@ -5,11 +5,7 @@
 You may need a machine with 4 GPUs and PyTorch v1.1.0 for Python 3.
 
 ## Training
-
-Repeat the following procedures 4 times.
-
-### Train the end-to-end adaptation module
-
+### Train source only models
 1. Go to the `Adapt` folder
 
 2. Train source only models
@@ -18,7 +14,9 @@ Repeat the following procedures 4 times.
 
 Where `<DOMAIN>` is clipart or painting, `<NET>` is the network (e.g. `senet154`)
 
-3. Train domain adaptation module
+Then repeat the following procedures 4 times.
+
+### Train the end-to-end adaptation module
 
   ```bash experiments/<DOMAIN>/<NET>_<phase_id>/train.sh``` 
 
