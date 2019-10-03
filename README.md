@@ -36,7 +36,7 @@ Where `<DOMAIN>` is clipart or painting, `<NET>` is network (e.g. `senet154`)
 
 3. Copy the pseudo labels file to ```Adapt/experiments/<DOMAIN>/<NET>_<next_phase_id>``` for the next adaptation.
 
-# Acknowledgements
+## Acknowledgements
 Thanks to the domain adaptation community and the contributers of the pytorch ecosystem.
 
 Pytorch pretrained-models [link](https://github.com/Cadene/pretrained-models.pytorch) and [link](https://github.com/lukemelas/EfficientNet-PyTorch)
