@@ -12,11 +12,14 @@ Repeat the following procedures 4 times.
 
 1. Go to the `Adapt` folder
 
-2. Train source only model
+2. Train source only models
+
 ```bash experiments/<DOMAIN>/<NET>/train.sh```
-Where `<DOMAIN>` is clipart or painting, `<NET>` is network (e.g. `senet154`)
+
+Where `<DOMAIN>` is clipart or painting, `<NET>` is the network (e.g. `senet154`)
 
 3. Train domain adaptation module
+
 ```bash experiments/<DOMAIN>/<NET>_<phase_id>/train.sh``` 
 
 ### Extract features
@@ -24,6 +27,7 @@ Where `<DOMAIN>` is clipart or painting, `<NET>` is network (e.g. `senet154`)
 1. Copy the adaptation models to the folder `ExtractFeat/experiments/<phase_id>/<DOMAIN>/<NET>/snapshot`
 
 2. Extract features by running the scripts
+
 ```bash experiments/<phase_id>/<DOMAIN>/scripts/<NET>.sh```
 
 3. Copy the features from ```experiments/<phase_id>/<DOMAIN>/<NET>/<NET>_<source_and_target_domains>/result``` to ```dataset/visda2019/pkl_test/<phase_id>/<DOMAIN>/<NET>```
@@ -32,6 +36,7 @@ Where `<DOMAIN>` is clipart or painting, `<NET>` is network (e.g. `senet154`)
 1. Go to the `FeatFusionTest` folder
 
 2. Train feature fusion based adaptation module
+
 ```bash experiments/<phase_id>/<DOMAIN>/train.sh```
 
 3. Copy the pseudo labels file to ```Adapt/experiments/<DOMAIN>/<NET>_<next_phase_id>``` for the next adaptation.
