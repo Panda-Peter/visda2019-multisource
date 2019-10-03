@@ -1,0 +1,43 @@
+LOGGER_NAME: 'log'
+SEED: 1546884941.160048
+############################ TRAIN ############################
+TRAIN:
+  FIX_TWO: True
+
+############################ TEST ############################
+TEST:
+  BATCH_SIZE: 32
+
+############################ DATA_LOADER ############################
+DATA_LOADER:
+  NUM_WORKERS: 4
+  SHUFFLE: True
+  DATA_ROOT: '../dataset/visda2019'
+  LIST: 'list'
+  FOLDER: 'infograph'
+
+############################ AUG ############################
+AUG:
+  TEST_CROP: [320, 320]
+  #TEST_CROP: [288, 288]
+  RESIZE: [0, 0]
+  RND_CROP: [0, 0]
+
+  V_FLIP: 0.0
+  H_FLIP: 0.5
+  ROTATION: 0.0
+  BRIGHTNESS: 0.0
+  CONTRAST: 0.0
+  SATURATION: 0.0
+  HUE: 0.0
+  MULTI_CROP_SIZE: 0
+
+MEAN: [0.485, 0.456, 0.406]
+STD:  [0.229, 0.224, 0.225]
+
+############################ MODEL ############################
+MODEL:
+  CLASS_NUM: 345
+  NET: 'efficientnet_b7'
+  IN_DIM: 2560
+  EMBED_DIM: 1000
