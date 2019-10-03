@@ -1,0 +1,60 @@
+https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
+
+----------------- Options ---------------
+                batchSize: 24                            	[default: 1]
+                    beta1: 0.5                           
+          checkpoints_dir: ./models/cyclegan	[default: ./checkpoints]
+           continue_train: False                         
+                 dataroot: ./RealSketch	[default: None]
+             dataset_mode: unaligned                     
+              display_env: main                          
+             display_freq: 24                            	[default: 400]
+               display_id: 0                             
+            display_ncols: 4                             
+             display_port: 8097                          
+           display_server: http://localhost              
+          display_winsize: 256                           
+              epoch_count: 1                             
+                 fineSize: 256                           
+                  gpu_ids: 0,1,2,3                       	[default: 0]
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 3                             
+                  isTrain: True                          	[default: None]
+                 lambda_A: 10.0                          
+                 lambda_B: 10.0                          
+          lambda_identity: 0.5                           
+                 loadSize: 286                           
+                       lr: 0.0002                        
+           lr_decay_iters: 50                            
+                lr_policy: lambda                        
+         max_dataset_size: inf                           
+                    model: cycle_gan                     
+                 nThreads: 4                             
+               n_layers_D: 3                             
+                     name: real2sketch_r9_ep200          	[default: experiment_name]
+                      ndf: 64                            
+                      ngf: 64                            
+                    niter: 100                           
+              niter_decay: 100                           
+               no_dropout: True                          
+                  no_flip: False                         
+                  no_html: False                         
+                 no_lsgan: False                         
+                     norm: instance                      
+                output_nc: 3                             
+                    phase: train                         
+                pool_size: 50                            
+               print_freq: 24                            	[default: 100]
+           resize_or_crop: resize_and_crop               
+          save_epoch_freq: 5                             
+         save_latest_freq: 5000                          
+           serial_batches: False                         
+                   suffix:                               
+         update_html_freq: 1000                          
+                  verbose: False                         
+          which_direction: AtoB                          
+              which_epoch: latest                        
+         which_model_netD: basic                         
+         which_model_netG: resnet_9blocks                
+----------------- End -------------------
