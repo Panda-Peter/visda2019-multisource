@@ -8,7 +8,7 @@ You may need a machine with 4 GPUs and PyTorch v1.1.0 for Python 3.
 
 Repeat the following procedures 4 times.
 
-### Train end-to-end adaptation module
+### Train the end-to-end adaptation module
 
 1. Go to the `Adapt` folder
 
@@ -28,7 +28,7 @@ Where `<DOMAIN>` is clipart or painting, `<NET>` is network (e.g. `senet154`)
 
 3. Copy the features from ```experiments/<phase_id>/<DOMAIN>/<NET>/<NET>_<source_and_target_domains>/result``` to ```dataset/visda2019/pkl_test/<phase_id>/<DOMAIN>/<NET>```
 
-### Train feature fusion based adaptation module
+### Train the feature fusion based adaptation module
 1. Go to the `FeatFusionTest` folder
 
 2. Train feature fusion based adaptation module
