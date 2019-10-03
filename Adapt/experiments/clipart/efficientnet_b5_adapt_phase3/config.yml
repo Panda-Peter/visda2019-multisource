@@ -1,0 +1,100 @@
+LOGGER_NAME: 'log'
+SEED: 1546884941.160048
+############################ TRAIN ############################
+TRAIN:
+  BATCH_SIZE: 16
+  FIX_TWO: True
+  FIX_BN: False
+  FIX_ALL: False
+
+############################ TEST ############################
+TEST:
+  BATCH_SIZE: 32
+  
+############################ DATA_LOADER ############################
+DATA_LOADER:
+  NUM_WORKERS: 4
+  SHUFFLE: True
+  DATA_ROOT: '../dataset/visda2019'
+  SOURCE: 'realsketch2clipart_real_quickdraw_infograph_sketch'
+  TARGET: 'clipart'
+  SOURCE_TYPE: 'online'
+  TARGET_TYPE: 'online' # list, online
+  ITER: -1
+  CLASS_NUM_PERBATCH: 8
+  TRG_PSEUDOLABELS: './experiments/clipart/efficientnet_b5_adapt_phase3/2_fusion_clipart.pkl'
+
+############################ SOLVER ############################
+SOLVER:
+  BASE_LR: 0.001
+  NEW_LR: 0.01
+  TYPE: 'sgd'
+  LR_POLICY: 'step'
+  GAMMA: 0.9
+  STEP_SIZE: 1
+  MAX_EPOCH: 20
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 0.00001
+  WEIGHT_DECAY_BIAS: 0.00001
+  BIAS_LR_FACTOR: 1
+  DISPLAY: 20
+  SNAPSHOT_ITERS: 1
+  TEST_INTERVAL: 1
+  
+############################ LOSSES ############################
+LOSSES:
+  CROSS_ENT_WEIGHT: 1.0
+  
+  TRG_GXENT_WEIGHT: 1.0
+  GXENT_K: 0.0
+  GXENT_Q: 0.7
+
+  SYMM_XENT_WEIGHT: 1.0
+  ALPHA: 0.1
+  BETA: 1.0
+  A: -6.0
+############################ AUG ############################
+AUG:
+  TEST_CROP: [288, 288]
+  RESIZE: [320, 320]
+  RND_CROP: [0, 0]
+  V_FLIP: 0.0
+  H_FLIP: 0.5
+  ROTATION: 0.0
+  BRIGHTNESS: 0.0
+  CONTRAST: 0.0
+  SATURATION: 0.0
+  HUE: 0.0
+  
+  SCALE_RATIOS: [1, 0.875, 0.75, 0.66]
+  MAX_DISTORT: 1
+  MULTI_CROP_SIZE: 288
+############################ MODEL ############################
+MODEL:
+  SOURCE_ONLY: False
+  CLASS_NUM: 345
+  NET: 'efficientnet_b5'
+  IN_DIM: 2048
+  EMBED_DIM: 1000
+  MIN_CLS_NUM: 5
+  MIN_CONF: 0.5
+  UPDATE_LABEL: 100
+
+MEAN: [0.485, 0.456, 0.406]
+STD:  [0.229, 0.224, 0.225]
+
+# senet154              2048    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# se_resnext101_32x4d   2048    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# pnasnet5large         4320    [378, 378]     [331, 331]      [0.5, 0.5, 0.5]            [0.5, 0.5, 0.5]
+# inceptionresnetv2     1536    [328, 328]     [299, 299]      [0.5, 0.5, 0.5]            [0.5, 0.5, 0.5]
+# inceptionv4           1536    [328, 328]     [299, 299]      [0.5, 0.5, 0.5]            [0.5, 0.5, 0.5]
+# polynet               2048    [378, 378]     [331, 331]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# dpn131                2688    [256, 256]     [224, 224]      [0.4863, 0.4588, 0.4078]   [0.2348, 0.2348, 0.2348]
+# efficientnet_b0       1280    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# efficientnet_b1       1280    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# efficientnet_b2       1408    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# efficientnet_b3       1536    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# efficientnet_b4       1792    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# efficientnet_b5       2048    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# efficientnet_b6       2304    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
+# efficientnet_b7       2560    [256, 256]     [224, 224]      [0.485, 0.456, 0.406]      [0.229, 0.224, 0.225]
