@@ -1,0 +1,64 @@
+LOGGER_NAME: 'log'
+SEED: 1546884941.160048
+
+############################ TRAIN ############################
+TRAIN:
+  BATCH_SIZE: 1380
+
+############################ TEST ############################
+TEST:
+  BATCH_SIZE: 128
+  
+############################ DATA_LOADER ############################
+DATA_LOADER:
+  NUM_WORKERS: 1
+  DATA_ROOT: '../dataset/visda2019/pkl_test/phase3/clipart'
+  TARGET: 'clipart'
+  SRC_CNT_PCLS: 3
+  TRG_CNT_PCLS: 3
+  
+############################ SOLVER ############################
+SOLVER:
+  LR: 0.0005
+  TYPE: 'adam'
+  LR_POLICY: 'step'
+  GAMMA: 0.8
+  STEP_SIZE: 5
+  MAX_EPOCH: 30
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  BIAS_LR_FACTOR: 1
+  DISPLAY: 20
+  SNAPSHOT_ITERS: 1
+  TEST_INTERVAL: 1
+  EPOCH_K: 3
+  
+############################ LOSSES ############################
+LOSSES:
+  CROSS_ENT_WEIGHT: 1.0
+
+  TRG_GXENT_WEIGHT: 1.0
+  GXENT_K: 0.5
+  GXENT_Q: 0.7
+
+  UNSUP_WEIGHT: 0.0
+  
+  SYMM_XENT_WEIGHT: 0.0
+  ALPHA: 0.1
+  BETA: 1.0
+  A: -6.0
+
+############################ MODEL ############################
+MODEL:
+  CLASS_NUM: 345
+  NETS: ['MLP', 'MLP', 'MLP', 'MLP', 'MLP', 'MLP', 'MLP', 'MLP', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear', 'Bilinear']
+  NAMES: ['0-MLP', '1-MLP', '2-MLP', '3-MLP', '4-MLP', '5-MLP', '6-MLP', '7-MLP', '01-Bil', '02-Bil', '03-Bil', '04-Bil', '05-Bil', '06-Bil', '07-Bil', '12-Bil', '13-Bil', '14-Bil','15-Bil', '16-Bil', '17-Bil', '23-Bil', '24-Bil', '25-Bil', '26-Bil', '27-Bil', '34-Bil', '35-Bil', '36-Bil', '37-Bil', '45-Bil', '46-Bil', '47-Bil', '56-Bil', '57-Bil', '67-Bil']
+  INPUTS: [[0], [1], [2], [3], [4], [5], [6], [7], [0,1], [0,2], [0,3], [0,4], [0,5], [0,6], [0,7], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7], [2,3], [2,4], [2,5], [2,6], [2,7], [3,4], [3,5], [3,6], [3,7], [4,5], [4,6], [4,7], [5,6], [5,7], [6,7]]
+  NET_TYPE: ['efficientnet_b7', 'efficientnet_b6', 'efficientnet_b5','efficientnet_b4', 'senet154', 'inceptionresnetv2', 'pnasnet5large', 'inceptionv4']
+  NET_DIM: [2560, 2304, 2048, 1792, 2048, 1536, 4320, 1536]
+  EMBED_DIM: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
+  MIN_CLS_NUM: 5
+  MIN_CONF: 0.5
+  WEIGHTS: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
