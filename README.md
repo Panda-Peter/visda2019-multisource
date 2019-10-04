@@ -1,5 +1,7 @@
 # visda2019-multisource
 
+We release the source code of our submissions for Multi-Source Domain Adaptation task in VisDA-2019. Details can be referred in [Technical report](https://drive.google.com/open?id=1DvZ-QnSNoYnIkrv6jeVYzQ2S2bV4NDmy)
+
 All the pretrained models, synthetic data generated via [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) , and submission files can be downloaded from the [link](https://drive.google.com/open?id=1qayUpvuBWcTBwsHhbNSRKrw3BXArkrlF)
 
 ## Prerequisites
