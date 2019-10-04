@@ -43,6 +43,18 @@ Then repeat the following procedures 4 times.
 
 3. Copy the pseudo labels file to ```Adapt/experiments/<DOMAIN>/<NET>_<next_phase_id>``` for the next adaptation.
 
+## Citation
+Please cite our technique report in your publications if it helps your research:
+
+```
+@article{pan2019visda,
+  title={Multi-Source Domain Adaptation and Semi-Supervised Domain Adaptation with Focus on Visual Domain Adaptation Challenge 2019},
+  author={Pan, Yingwei and Li, Yehao and Cai, Qi and Chen, Yang and Yao, Ting},
+  booktitle={Visual Domain Adaptation Challenge},
+  year={2019}
+}
+```
+
 ## Acknowledgements
 Thanks to the domain adaptation community and the contributers of the pytorch ecosystem.
 
