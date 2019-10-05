@@ -44,7 +44,7 @@ Then repeat the following procedures 4 times.
 3. Copy the pseudo labels file to ```Adapt/experiments/<DOMAIN>/<NET>_<next_phase_id>``` for the next adaptation.
 
 ## Citation
-Please cite our technique report in your publications if it helps your research:
+Please cite our technical report in your publications if it helps your research:
 
 ```
 @article{pan2019visda,
